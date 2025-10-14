@@ -33,7 +33,7 @@ const Hero = () => {
          <motion.div 
            className="rounded-full w-max flex items-center justify-center p-px" 
            style={{
-             background: 'linear-gradient(283.9deg, rgba(65, 134, 231, 0) 78.13%, rgba(65, 134, 231, 0) 89.21%, #4186E7 99.89%)'
+             background: 'linear-gradient(300.9deg, rgba(65, 134, 231, 0) 78.13%, rgba(65, 134, 231, 0) 89.21%, #4186E7 99.89%)'
            }}
            initial={{ scale: 0.8, opacity: 0 }}
            animate={{ scale: 1, opacity: 1 }}

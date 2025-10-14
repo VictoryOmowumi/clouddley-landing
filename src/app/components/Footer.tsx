@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="relative overflow-hidden bg-[#0B0C0D] text-white">
       <section className="relative mx-auto max-w-5xl px-6 py-16 text-center md:py-20 ">
         <div className="cta2-bg"></div>
-        <motion.h2 
+        <motion.h2
           className="text-[28px] font-semibold leading-tight md:text-[34px]"
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -17,7 +17,7 @@ export default function Footer() {
         >
           Build Faster. Smarter. Privately.
         </motion.h2>
-        <motion.p 
+        <motion.p
           className="mx-auto mt-3 max-w-2xl text-[15px] leading-relaxed text-white/70 md:text-[16px]"
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -27,17 +27,14 @@ export default function Footer() {
           Skip the GPU queues. Keep full control. Run your models your way.
         </motion.p>
 
-        <motion.div 
+        <motion.div
           className="mt-8 flex flex-wrap items-center justify-center gap-6"
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link
               href="/connect-gpu"
               className={[
@@ -55,21 +52,22 @@ export default function Footer() {
             </Link>
           </motion.div>
 
-          <motion.div
-            whileHover={{ x: 5 }}
-            whileTap={{ scale: 0.95 }}
-          >
+          <motion.div whileHover={{ x: 5 }} whileTap={{ scale: 0.95 }}>
             <Link
               href="/docs"
               className="inline-flex items-center gap-2 text-[14px] text-white/80 transition-colors hover:text-white"
             >
               See Documentation
-              <motion.svg 
-                width="18" 
-                height="18" 
+              <motion.svg
+                width="18"
+                height="18"
                 viewBox="0 0 24 24"
                 animate={{ x: [0, 3, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               >
                 <path
                   d="M6 12h12M13 7l5 5-5 5"
@@ -86,13 +84,14 @@ export default function Footer() {
 
       <div className="border-t border-white/10">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-y-10 px-6 py-12 md:grid-cols-12 md:gap-x-8 md:py-14">
-          <motion.div 
+          <motion.div
             className="md:col-span-5 lg:col-span-4"
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
+            <div className="flex flex-col h-full justify-between">
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
@@ -104,11 +103,11 @@ export default function Footer() {
                 alt="Clouddley"
                 width={195}
                 height={62}
-                className="h-[38px] w-auto"
+                className="h-auto w-auto"
               />
             </motion.div>
-            <motion.p 
-              className="mt-8 text-[13px] leading-relaxed text-white/60"
+            <motion.p
+              className="mt-10 text-[13px] leading-relaxed text-white/60 "
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.4, delay: 0.2 }}
@@ -123,9 +122,10 @@ export default function Footer() {
                 help@clouddley.com
               </Link>
             </motion.p>
+            </div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="md:col-span-7 lg:col-span-8"
             initial={{ x: 50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
@@ -143,7 +143,7 @@ export default function Footer() {
                   title="Products"
                   links={[
                     ["Clouddley AI", "/clouddley-ai"],
-                    ["Triggr", "/triggr"],
+                    ["Triggr", "/trigger"],
                   ]}
                 />
               </motion.div>
@@ -191,7 +191,7 @@ export default function Footer() {
                     ["Discord", "/discord"],
                   ]}
                 >
-                  <motion.div 
+                  <motion.div
                     className="mt-3 flex gap-3"
                     initial={{ y: 20, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
@@ -244,12 +244,12 @@ export default function Footer() {
               </motion.div>
             </div>
           </motion.div>
+          
         </div>
       </div>
     </footer>
   );
 }
-
 
 function Column({
   title,
@@ -262,10 +262,12 @@ function Column({
 }) {
   return (
     <div>
-      <h3 className="mb-3 text-[15px] font-semibold text-white/90">{title}</h3>
+      <h3 className="mb-3 text-[20px] font-semibold text-secondary-text">
+        {title}
+      </h3>
       <ul className="space-y-2">
         {links.map(([label, href], index) => (
-          <motion.li 
+          <motion.li
             key={href}
             initial={{ x: -10, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
@@ -274,7 +276,7 @@ function Column({
           >
             <Link
               href={href}
-              className="text-[14px] text-white/65 transition-colors hover:text-white duration-300 hover:translate-x-1 inline-block"
+              className="text-[18px] text-white transition-colors hover:text-white duration-300 hover:translate-x-1 inline-block"
             >
               {label}
             </Link>

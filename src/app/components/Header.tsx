@@ -67,7 +67,7 @@ const Header = () => {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <div className="flex justify-between items-center lg:px-28 px-4 backdrop-blur-2xl bg-background/80 border-b border-white/5">
+      <div className="flex justify-between items-center lg:px-28 px-4 py-2 backdrop-blur-2xl bg-background/80 border-b border-white/5">
         <motion.div
           initial={{ x: -50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
