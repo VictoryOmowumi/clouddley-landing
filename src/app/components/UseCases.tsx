@@ -209,7 +209,7 @@ export default function UseCasesRotator({
 
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-16">
-          <div className="lg:space-y-10 space-y-2 flex-1 flex flex-row lg:flex-col overflow-x-auto overflow-y-hidden lg:overflow-x-hidden lg:overflow-y-auto pb-4 lg:pb-0 no-scrollbar">
+          <div className="lg:space-y-10 space-y-2 flex-1  p-2 flex flex-row lg:flex-col overflow-x-auto overflow-y-hidden lg:overflow-x-hidden lg:overflow-y-auto pb-4 lg:pb-0 no-scrollbar">
             {useCases.map((useCase) => (
               <motion.button
                 key={useCase.id}
