@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { MdCheck } from "react-icons/md"; // or any check icon
+import { MdCheck } from "react-icons/md"; 
 
 type PillState = "hidden" | "spinning" | "success";
 
@@ -37,7 +37,6 @@ function SpinnerPill({
             exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
             className="relative h-2 w-2 rounded-full"
           >
-            {/* spinner ring */}
             <span className="absolute inset-[-10px] rounded-full border-2 border-white/10 border-t-white/80 animate-spin" />
           </motion.div>
         )}
@@ -64,7 +63,6 @@ function SpinnerPill({
     </div>
   );
 }
-// AI Models data
 const aiModels = [
   {
     id: 1,
@@ -143,11 +141,8 @@ export default function HeroCarousel() {
   const [index, setIndex] = useState(0); // 0=Connect, 1=Deploy, 2=Chat
   const [dir, setDir] = useState(1);
   const [selectedModel, setSelectedModel] = useState(aiModels[0]);
-
-  // NEW: deploy micro-stage: 0=list, 1=list w/ first selected, 2=details
   const [deployStage, setDeployStage] = useState<0 | 1 | 2>(0);
 
-  // Auto-cycle through steps
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prevIndex) => {
@@ -160,20 +155,19 @@ export default function HeroCarousel() {
     return () => clearInterval(interval);
   }, []);
 
-  // reset micro flow when entering Deploy
+  // Handle deploy step micro-interactions
   useEffect(() => {
     if (index !== 1) return;
     setDeployStage(0);
-    // Simulate user interaction: show list, then user selects first model, then shows details
-    const t1 = setTimeout(() => setDeployStage(1), 1500); // User sees list for 1.5 seconds
-    const t2 = setTimeout(() => setDeployStage(2), 3500); // User clicks on first model, shows details
+    const t1 = setTimeout(() => setDeployStage(1), 1500);
+    const t2 = setTimeout(() => setDeployStage(2), 3500);
     return () => {
       clearTimeout(t1);
       clearTimeout(t2);
     };
   }, [index]);
 
-  // keep selection deterministic for stage 1/2
+  // Keep model selection consistent during deploy flow
   useEffect(() => {
     if (index === 1 && deployStage >= 1) setSelectedModel(aiModels[0]);
   }, [index, deployStage]);
@@ -243,7 +237,6 @@ export default function HeroCarousel() {
   );
 }
 
-/* ---------- STEP NAVIGATION ---------- */
 
 function StepNav({
   index,
@@ -252,14 +245,13 @@ function StepNav({
   index: number;
   onStep: (to: number) => void;
 }) {
-  // onStep is kept for future manual navigation implementation
   const steps = [
     { label: "Connect", key: "connect" },
     { label: "Deploy", key: "deploy" },
     { label: "Chat", key: "chat" },
   ];
 
-  // Suppress unused parameter warning - will be used for manual navigation
+  // TODO: Implement manual navigation
   void onStep;
 
   return (

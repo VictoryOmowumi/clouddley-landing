@@ -8,7 +8,7 @@ import GgufSection from './components/Gguf'
 import Cta1 from './components/Cta1'
 const Home = () => {
   return (
-    <div className='w-full h-full'>
+    <div className='w-full h-full max-w-7xl mx-auto'>
       <Hero />
       <HowItWorks />
       <FeaturesHighlight />

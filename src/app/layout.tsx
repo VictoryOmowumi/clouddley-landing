@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="font-sf-pro-display antialiased bg-background flex flex-col min-h-screen">
         <Header />
-        <main className="max-w-7xl w-full mx-auto flex-1">
+        <main className="w-full flex-1">
           {children}
         </main>
         <Footer />

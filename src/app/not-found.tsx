@@ -160,7 +160,7 @@ export default function NotFound() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 1 }}
         >
-          <p className="text-xs text-white/40 italic">
+          <p className="text-xs text-white/40 italic mb-2">
             Fun fact: Even the most advanced AI models have a 0.1% chance of getting lost in the cloud! ☁️
           </p>
         </motion.div>
